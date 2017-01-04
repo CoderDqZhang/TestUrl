@@ -1,0 +1,178 @@
+body {
+	
+}
+
+h1 {
+	font-family: PingFangSC-Thin;
+	text-align: center;
+	font-size: 3rem;
+	margin: 6rem auto 2rem;
+	line-height: 4.2rem;
+	font-weight: 400
+}
+
+p {
+	font-size: 1.3rem;
+	margin: 0 2rem
+}
+
+h2 {
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	margin: 3rem 2rem 1rem;
+	font-weight: 400
+}
+
+a {
+	color: #384249
+}
+
+#top { 
+
+	position:fixed;  
+	top: 0px; 
+	
+	width: 100%;
+	height: 49px;
+	background: #4BD4C5; 
+	border:0px solid #F90;
+}
+
+#logo { 
+	margin-left: 15px;
+	margin-top: 12px;
+}
+#detail{
+	margin-left: 50px;
+	margin-top: -25px;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+#openApp{
+	text-align: right;
+	margin-right: 10px;
+	margin-top: -22px
+}
+
+#button{
+	width: 60px;
+	height: 25px;
+	border-width: 0px;
+	border-radius: 2px;
+	background-color: #FFFFFF;
+	font-size:10px;
+	color: #4BD4C5;
+}
+
+#tickeshow{
+	height: 148px;
+	margin-top: 33px;
+	width: 100%;
+}
+#ticketPhoto{
+	float: left;
+	border-radius: 3px;
+	margin-top: 17px;
+	width: 30%;
+	height: 148px;
+	background-color: #fff;
+	margin-left: 15px;
+}
+#ticketInfo{
+	width: 65%;
+	float: left;
+	height: 148px;
+	margin-left: 0px;
+	margin-top: 17px;
+	background-color: #fff;
+}
+#ticketTitle{
+	font-size: 15px;
+	margin-left: 12px;
+	height：auto;
+	color: #384249;
+}
+#sessionTime{
+	font-size: 12px;
+	margin-left: 12px;
+	color: #A2ABB5;
+}
+#sessionLocation{
+	font-size: 12px;
+	margin-left: 12px;
+	color: #A2ABB5;
+}
+
+#ticketStatus{
+	margin-left: 12px;
+	margin-top: 10px;
+	
+}
+
+#serviceInfo{
+	text-align: left;
+	background-color: #FFFFFF;
+	margin-left:12px;
+	display: block;
+	mat
+	font-size: 12px;
+	color: #4BD4C5;
+}
+#table{
+	
+	/*border-left-width: 0px;
+	border-right-width: 0px;
+	border-top-width: 1.0px;*/
+
+	width: 90%;
+}
+
+#ticket_tag{
+	background-color: #4BD4C5;
+	color: #FFFFFF;
+	border-radius: 2px;
+	font-size: 11px;
+}
+
+#originprice{
+	width: 17rem;
+	margin-top: -20px;
+	margin-left: -10px;
+	color: #384249;
+	text-align: center;
+	font-size: 13px;
+}
+
+#right{
+	color: #4BD4C5;
+	font-size: 13px;
+	text-align: right;
+}
+#left{	
+	text-align: left;
+}
+#center{
+	color: #384249;
+	text-align: center;
+	font-size: 13px;
+	float: center;
+}
+#devely{
+	color: #BBC1CB;
+	text-align: center;
+	font-size: 10px;
+}
+
+#tableInfo{
+	color: #8A96A2;
+	text-align: center;
+	font-size: 12px;
+	width: 30%;
+}
+.tableDiv{
+	border:1px solid #EBEBEB;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}

@@ -1,0 +1,187 @@
+<html>
+ <head></head>
+ <body>
+  <meta charset="utf-8" />
+  <meta name='apple-itunes-app' content='app-id=1170039060'>  
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static "common-f6d056dcd0.css" %}"/>
+  <link rel="stylesheet" href="{% static "agreement-25289dacfa.css" %}"/>
+  <script type="text/javascript" src="{% static "jquery.js" %}"></script>
+  <script type="text/javascript" src="{% static "handlebars-v4.0.5.js" %}"></script>
+  <script type="text/javascript" src="{% static "sweetalert.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "jweixin-1.0.0.js" %}"></script>
+  <script type="text/javascript" src="{% static "lanren-alert.js" %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static "sweetalert.css" %}">
+{#  <link rel="stylesheet" href="../static/common-f6d056dcd0.css" />#}
+{#  <link rel="stylesheet" href="../static/agreement-25289dacfa.css" />#}
+{#  <script type="text/javascript" src="../static/jquery.js"></script>#}
+{#  <script type="text/javascript" src="../static/handlebars-v4.0.5.js"></script>#}
+{#  <script type="text/javascript" src="../static/sweetalert.min.js"></script>#}
+{#  <script type="text/javascript" src="../static/jweixin-1.0.0.js"></script>#}
+{#  <link rel="stylesheet" type="text/css" href="../static/sweetalert.css">#}
+  <script type="text/javascript">  
+    document.getElementById('button').onclick = function(e){  
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为  
+        // 否则打开a标签的href链接  
+        var ifr = document.createElement('iframe');  
+        ifr.src = 'com.liangpiao.liangpiao://';  
+        ifr.style.display = 'none';  
+        document.body.appendChild(ifr);  
+        window.setTimeout(function(){  
+            document.body.removeChild(ifr);  
+        },3000)  
+    };  
+  </script> 
+  <script type="text/javascript">
+    $(function () {
+      $("#tableList").click(function () {
+        var ua = navigator.userAgent;
+        if(ua.match(/iPhone|iPod/i) != null){
+          $.fn.alert({
+                  'tip': '确定取消么？',
+                  'cancelBtnLbl': '我要取消',
+                  'confirmBtnLbl': '再三思考',
+                  cancelCallback: function() {
+                    //取消后的操作
+                  },
+                  confirmCallback: function() {
+                    //确认后的操
+                  }
+          });
+      //iphone代码
+        }
+        else if(ua.match(/Android/i) != null){
+           alert("ddd");
+        //android代码
+        }
+        else if(ua.match(/iPad/i) != null){
+           alert("ddd");
+        //ipad代码
+        }
+        // swal({
+        //   title: "购买需打开良票App",
+        //   showCancelButton: true,
+        //   confirmButtonText: "立即打开",
+        //   cancelButtonText: "取消",
+        //   closeOnConfirm: false,
+        //   function(isConfirm){
+        //     if (isConfirm) {
+        //          swal("Deleted!", "Your imaginary file has been deleted.", "success");
+        //     } else {
+        //       swal("Cancelled", "Your imaginary file is safe :)", "error");
+        //     }
+        //   }
+        // });
+      });
+    });
+  </script>
+  
+  <div id="top" style="display: block;">
+  	<img id="logo" src="../WebShare/Resource/logo.png" height="28" width="29">
+  	<p id="detail">买票上良票，总有你的票 ：）</p>
+  	<div id="openApp"><button id="button">立即打开</button></div> 
+  </div> 
+  <div id="tickeshow">
+  	<div id="ticketPhoto">
+  		<img width="100%" height="148" src="http://7xsatk.com1.z0.glb.clouddn.com/47e2c561e1793e9cb3c6171d889d6656.jpg?imageMogr/v2/format/jpg/thumbnail/277x373" />
+  	</div>
+  	<div id="ticketInfo">
+  		<p id="ticketTitle">孟京辉经典作品 大型多媒体音乐话剧《琥珀》 </p>
+      <p id="sessionTime">2016.11.23 - 2016.11.27</p>
+      <p id="sessionLocation">保利剧院测试</p>
+      <div id="ticketStatus"></div>
+      <script id="ticketStatus-template" type="text/x-handlebars-template">
+        { {#each tickes } }
+          <span id="ticket_tag">{{title}}</span>
+        { {#/each} }
+      </script>
+      <p id="serviceInfo">全部在售门票，100%保真，安全交易，无票赔付</p>
+  	</div>
+  	</div>
+    <script id="table-template" type="text/x-handlebars-template">
+       { {#each this} }
+         <tr height=60>
+          <td id="left">
+            <span id="originprice">{{price}}</span>
+            </td>
+          <td>
+            <p id="center">{{ticketrow}}</p>
+            <p id="devely">{{devely}}</p>
+          </td>
+          <td id="right">
+            <span>{{much}}</span>
+            <br>
+            <span id="ticket_tag">{{tickesinfos}}</span>
+          </td>
+        </tr>
+       { {#/each} }
+     </script>
+  <script type="text/javascript">
+       $(document).ready(function() {
+         //模拟的json对象
+         var data = [
+                         {
+                             "price": "880（440*2",
+                             "ticketrow": "择优选择",
+                             "devely": "快递自取",
+                             "much":280,
+                             "tickesinfos":"最后剩余2张"
+                         },
+                        {
+                             "price": "880（440*2",
+                             "ticketrow": "择优选择",
+                             "devely": "快递自取",
+                             "much":280,
+                             "tickesinfos":"最后剩余2张"
+                         },
+                         {
+                             "price": "880（440*2",
+                             "ticketrow": "择优选择",
+                             "devely": "快递自取",
+                             "much":280,
+                             "tickesinfos":"最后剩余2张"
+                         }
+                     ];
+         
+         //注册一个Handlebars模版，通过id找到某一个模版，获取模版的html框架
+         //$("#table-template").html()是jquery的语法，不懂的童鞋请恶补。。。
+         var myTemplate = Handlebars.compile($("#table-template").html());
+         
+         //将json对象用刚刚注册的Handlebars模版封装，得到最终的html，插入到基础table中。
+         $('#tableList').html(myTemplate(data));
+       });
+            </script>
+    <br>
+    <br>
+    <br>
+    <div class="tableDiv">
+      <table id="table" style="margin-left:auto;margin-right:auto;">
+        <tr style="height:42px;width:100%;">
+            <td style="width:30%;text-align:left"><span id="tableInfo">票面价格</span> </td>
+            <td style="width:40%;text-align:center"><span id="tableInfo">座位</span></td>
+            <td style="width:30%;text-align:right"><span id="tableInfo">价格</span></td>
+        </tr>
+        <tbody id="tableList"></tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+       $(document).ready(function() {
+         //模拟的json对象
+         var data = {
+                     "tickes": [
+                         {
+                             "title": " 9.7折 ",
+                         }
+                     ]
+                 };
+         //注册一个Handlebars模版，通过id找到某一个模版，获取模版的html框架
+         //$("#table-template").html()是jquery的语法，不懂的童鞋请恶补。。。
+         var myTemplate = Handlebars.compile($("#ticketStatus-template").html());
+         //将json对象用刚刚注册的Handlebars模版封装，得到最终的html，插入到基础table中。
+         $('#ticketStatus').html(myTemplate(data));
+       });
+    </script>
+ </body>
+</html>
